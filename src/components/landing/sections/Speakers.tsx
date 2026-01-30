@@ -14,7 +14,7 @@ type SpeakersProps = {
 
 export function Speakers({ speakers }: SpeakersProps) {
   return (
-    <section className="bg-slate-950 py-20">
+    <section id="about" className="bg-slate-950 py-20">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeader
           title="Introducing Speakers"
@@ -25,7 +25,7 @@ export function Speakers({ speakers }: SpeakersProps) {
           {speakers.map((speaker, index) => (
             <article
               key={speaker.name}
-              className={`flex flex-col gap-8 rounded-2xl bg-gradient-to-br from-slate-950 to-gray-950 p-8 lg:flex-row ${
+              className={`flex flex-col gap-8 rounded-2xl bg-gradient-to-br from-slate-950 to-gray-950 p-8 transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(56,189,248,0.15)] lg:flex-row ${
                 index % 2 === 1 ? 'lg:flex-row-reverse' : ''
               }`}
             >
@@ -45,7 +45,7 @@ export function Speakers({ speakers }: SpeakersProps) {
                 <img
                   src={speaker.image}
                   alt={`${speaker.name} portrait`}
-                  className="h-full w-full rounded-2xl object-cover"
+                  className="h-full w-full rounded-2xl object-cover transition duration-300 hover:scale-[1.02]"
                 />
               </div>
             </article>

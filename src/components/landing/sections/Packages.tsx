@@ -1,3 +1,5 @@
+'use client';
+
 import { Button } from '../../ui/Button';
 import { SectionHeader } from '../../ui/SectionHeader';
 
@@ -16,8 +18,15 @@ type PackagesProps = {
 };
 
 export function Packages({ packages }: PackagesProps) {
+  const scrollToBooking = () => {
+    const section = document.querySelector('#book-session');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
-    <section className="py-20">
+    <section id="offerings" className="py-20">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeader
           title="Speaking Packages"
@@ -28,7 +37,7 @@ export function Packages({ packages }: PackagesProps) {
           {packages.map((pkg) => (
             <article
               key={pkg.name}
-              className={`flex h-full flex-col rounded-2xl border border-white/20 p-8 ${
+              className={`flex h-full flex-col rounded-2xl border border-white/20 p-8 transition duration-300 hover:-translate-y-1 hover:shadow-[0_25px_70px_rgba(14,165,233,0.2)] ${
                 pkg.highlight
                   ? 'bg-gradient-to-b from-sky-600 to-sky-900'
                   : 'bg-gradient-to-b from-slate-900 to-blue-950'
@@ -56,6 +65,7 @@ export function Packages({ packages }: PackagesProps) {
               <Button
                 variant={pkg.highlight ? 'secondary' : 'primary'}
                 className="mt-6 w-full"
+                onClick={scrollToBooking}
               >
                 Inquire about this package
               </Button>
@@ -63,7 +73,7 @@ export function Packages({ packages }: PackagesProps) {
           ))}
         </div>
 
-        <div className="mt-12 rounded-2xl border border-white/10 bg-slate-950 p-8">
+        <div className="mt-12 rounded-2xl border border-white/10 bg-slate-950 p-8 transition duration-300 hover:border-cyan-400/40 hover:shadow-[0_20px_60px_rgba(14,165,233,0.12)]">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div>
               <h3 className="text-2xl font-semibold text-white font-[var(--font-poppins)]">
@@ -74,7 +84,7 @@ export function Packages({ packages }: PackagesProps) {
                 your event format, audience size, and objectives.
               </p>
             </div>
-            <Button className="w-full lg:w-auto">
+            <Button className="w-full lg:w-auto" onClick={scrollToBooking}>
               Inquire about this package
             </Button>
           </div>

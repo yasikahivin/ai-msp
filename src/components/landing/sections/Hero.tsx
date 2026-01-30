@@ -1,7 +1,9 @@
+'use client';
+
 import { Button } from '../../ui/Button';
 
 type HeroProps = {
-  navItems: string[];
+  navItems: { label: string; href: string }[];
   assets: {
     heroBg: string;
     heroGrid: string; // <-- use as the centered portrait image
@@ -11,18 +13,25 @@ type HeroProps = {
 };
 
 export function Hero({ navItems, assets, trustLogos }: HeroProps) {
+  const scrollToSection = (target: string) => {
+    const section = document.querySelector(target);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
-    <section className="relative overflow-hidden">
+    <section id="home" className="relative overflow-hidden">
       <div className="relative mx-auto flex min-h-[90vh] max-w-7xl flex-col px-6 pb-24 pt-10">
         {/* Nav pill */}
         <nav className="mx-auto inline-flex flex-wrap items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm">
           {navItems.map((item) => (
             <a
-              key={item}
-              href="#"
-              className="rounded-full px-3 py-1 text-white/90 transition hover:bg-white/10"
+              key={item.label}
+              href={item.href}
+              className="rounded-full px-3 py-1 text-white/90 transition duration-300 hover:-translate-y-0.5 hover:bg-white/10"
             >
-              {item}
+              {item.label}
             </a>
           ))}
         </nav>
@@ -33,7 +42,7 @@ export function Hero({ navItems, assets, trustLogos }: HeroProps) {
           <img
             src={assets.heroGrid}
             alt="Speaker portrait"
-            className="pointer-events-none absolute left-1/2 top-[64%] w-[520px] max-w-[85vw] -translate-x-1/2 -translate-y-1/2 select-none opacity-95"
+            className="pointer-events-none absolute left-1/2 top-[64%] w-[520px] max-w-[85vw] -translate-x-1/2 -translate-y-1/2 select-none opacity-95 motion-safe:animate-[float_10s_ease-in-out_infinite]"
           />
         </div>
         <div className="relative mt-20 flex flex-1 flex-col items-center justify-center text-center">
@@ -53,8 +62,18 @@ export function Hero({ navItems, assets, trustLogos }: HeroProps) {
           </p>
 
           <div className="relative z-10 mt-7 flex flex-wrap justify-center gap-4">
-            <Button variant="primary">Book Us For Your Event →</Button>
-            <Button variant="secondary">Watch Our Intros (60s)</Button>
+            <Button
+              variant="primary"
+              onClick={() => scrollToSection('#book-session')}
+            >
+              Book Us For Your Event →
+            </Button>
+            <Button
+              variant="secondary"
+              onClick={() => scrollToSection('#previous-gigs')}
+            >
+              Watch Our Intros (60s)
+            </Button>
           </div>
 
           {/* Floating round logos (left/right) */}
@@ -64,7 +83,7 @@ export function Hero({ navItems, assets, trustLogos }: HeroProps) {
                 key={`${logo}-${index}`}
                 src={logo}
                 alt={`Trusted brand ${index + 1}`}
-                className="h-10 w-auto opacity-80"
+                className="h-10 w-auto opacity-80 transition duration-300 hover:scale-105 hover:opacity-100"
               />
             ))}
           </div>
