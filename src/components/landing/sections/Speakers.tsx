@@ -1,4 +1,4 @@
-import { SectionHeader } from "../../ui/SectionHeader";
+import { SectionHeader } from '../../ui/SectionHeader';
 
 type Speaker = {
   name: string;
@@ -17,7 +17,6 @@ export function Speakers({ speakers }: SpeakersProps) {
     <section className="bg-slate-950 py-20">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeader
-          eyebrow="Introducing Speakers"
           title="Introducing Speakers"
           subtitle="The MSP landscape is evolving rapidly. Without AI and automation, you risk being left behind."
         />
@@ -27,7 +26,7 @@ export function Speakers({ speakers }: SpeakersProps) {
             <article
               key={speaker.name}
               className={`flex flex-col gap-8 rounded-2xl bg-gradient-to-br from-slate-950 to-gray-950 p-8 lg:flex-row ${
-                index % 2 === 1 ? "lg:flex-row-reverse" : ""
+                index % 2 === 1 ? 'lg:flex-row-reverse' : ''
               }`}
             >
               <div className="flex-1 space-y-4">

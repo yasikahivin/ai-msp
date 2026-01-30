@@ -1,19 +1,21 @@
-import { Button } from "../../ui/Button";
-import { FormField } from "../../ui/FormField";
-import { SectionHeader } from "../../ui/SectionHeader";
+import { Button } from '../../ui/Button';
+import { FormField } from '../../ui/FormField';
+import { SectionHeader } from '../../ui/SectionHeader';
 
 const nextSteps = [
   {
-    title: "We&apos;ll Review Your Request",
-    description: "Our team will review your event details within 24 hours.",
+    title: 'We&apos;ll Review Your Request',
+    description: 'Our team will review your event details within 24 hours.',
   },
   {
-    title: "We&apos;ll Schedule a Call",
-    description: "We&apos;ll align on goals, audience, and the right speaking format.",
+    title: 'We&apos;ll Schedule a Call',
+    description:
+      'We&apos;ll align on goals, audience, and the right speaking format.',
   },
   {
-    title: "We&apos;ll Deliver a Proposal",
-    description: "Receive a tailored plan, pricing, and next steps for your event.",
+    title: 'We&apos;ll Deliver a Proposal',
+    description:
+      'Receive a tailored plan, pricing, and next steps for your event.',
   },
 ];
 
@@ -22,9 +24,8 @@ export function FinalCTA() {
     <section className="py-20">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeader
-          eyebrow="Ready to Elevate Your Next Event?"
           title="Ready to Elevate Your Next Event?"
-          subtitle="Let&apos;s discuss how we can create an unforgettable experience for your audience."
+          subtitle="Let's discuss how we can create an unforgettable experience for your audience."
         />
 
         <div className="mt-12 grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
@@ -36,7 +37,9 @@ export function FinalCTA() {
               <div className="mt-6 space-y-5">
                 {nextSteps.map((step) => (
                   <div key={step.title} className="space-y-2">
-                    <p className="text-lg font-semibold text-white">{step.title}</p>
+                    <p className="text-lg font-semibold text-white">
+                      {step.title}
+                    </p>
                     <p className="text-sm text-white/80">{step.description}</p>
                   </div>
                 ))}
@@ -48,7 +51,8 @@ export function FinalCTA() {
                 Download Speaker Kit
               </h3>
               <p className="mt-4 text-sm text-white/90">
-                Want more information before reaching out? Download our complete speaking kit with:
+                Want more information before reaching out? Download our complete
+                speaking kit with:
               </p>
               <ul className="mt-4 space-y-2 text-sm text-white/90">
                 <li>• Full speaker bios &amp; headshots</li>
@@ -80,7 +84,11 @@ export function FinalCTA() {
                 type="email"
                 placeholder="Email Address"
               />
-              <FormField label="Phone Number" name="phone" placeholder="Phone Number" />
+              <FormField
+                label="Phone Number"
+                name="phone"
+                placeholder="Phone Number"
+              />
               <FormField
                 label="Event Date (or Timeframe)"
                 name="eventDate"

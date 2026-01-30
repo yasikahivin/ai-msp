@@ -1,4 +1,4 @@
-import { SectionHeader } from "../../ui/SectionHeader";
+import { SectionHeader } from '../../ui/SectionHeader';
 
 type WhyCard = {
   title: string;
@@ -14,7 +14,6 @@ export function WhyChooseUs({ cards }: WhyChooseUsProps) {
     <section className="py-20">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeader
-          eyebrow="Why Choose Us"
           title="Why Choose Us"
           subtitle="The MSP landscape is evolving rapidly. Without AI and automation, you risk being left behind."
         />

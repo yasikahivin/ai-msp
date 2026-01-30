@@ -1,5 +1,5 @@
-import { Accordion } from "../../ui/Accordion";
-import { SectionHeader } from "../../ui/SectionHeader";
+import { Accordion } from '../../ui/Accordion';
+import { SectionHeader } from '../../ui/SectionHeader';
 
 type FAQItem = {
   question: string;
@@ -18,7 +18,6 @@ export function FAQ({ faqs }: FAQProps) {
     <section className="py-20">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeader
-          eyebrow="Frequently Asked Questions"
           title="Frequently Asked Questions"
           subtitle="Everything you need to know about booking us for your event"
         />
@@ -36,8 +35,8 @@ export function FAQ({ faqs }: FAQProps) {
                 Still Have Questions?
               </h3>
               <p className="mt-3 text-sm text-white/70">
-                We&apos;re happy to jump on a quick call to discuss your specific needs and answer any
-                questions.
+                We&apos;re happy to jump on a quick call to discuss your
+                specific needs and answer any questions.
               </p>
             </div>
             <button className="rounded-lg bg-sky-600 px-5 py-2 text-sm font-medium text-white">
