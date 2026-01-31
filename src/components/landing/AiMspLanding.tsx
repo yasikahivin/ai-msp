@@ -26,14 +26,14 @@ const ASSETS = {
 };
 
 const navItems = [
-  'Home',
-  'Offerings',
-  'About',
-  'Book a Session',
-  'Previous Gigs',
-  'Resources',
-  'FAQ',
-  'Contact / Social',
+  { label: 'Home', href: '#home' },
+  { label: 'Offerings', href: '#offerings' },
+  { label: 'About', href: '#about' },
+  { label: 'Book a Session', href: '#book-session' },
+  { label: 'Previous Gigs', href: '#previous-gigs' },
+  { label: 'Resources', href: '#resources' },
+  { label: 'FAQ', href: '#faq' },
+  { label: 'Contact / Social', href: '#contact' },
 ];
 
 const speakers = [

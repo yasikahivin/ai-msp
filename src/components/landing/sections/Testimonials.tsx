@@ -29,7 +29,7 @@ export function Testimonials({ testimonials }: TestimonialsProps) {
           {testimonials.map((testimonial) => (
             <article
               key={`${testimonial.name}-${testimonial.location}`}
-              className="rounded-xl border border-slate-900 bg-slate-950 p-6"
+              className="rounded-xl border border-slate-900 bg-slate-950 p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:shadow-[0_20px_50px_rgba(14,165,233,0.18)]"
             >
               <div className="flex flex-col gap-1">
                 <p className="text-lg font-medium text-white font-[var(--font-manrope)]">
